@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "githubUsername": "balupton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.059617,
+          -33.838197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "githubUsername": "RobLoach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.456961,
+          43.677633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "githubUsername": "mikeumus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.41417,
+          40.085154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "githubUsername": "Greduan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.370078,
+          23.944748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "githubUsername": "ahdinosaur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.264057,
+          37.884742
+        ]
+      }
+    }
+  ]
+}
