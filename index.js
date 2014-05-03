@@ -24,9 +24,14 @@ xhr({
       layer.bindPopup(feature.properties.githubUsername);
     },
   });
-  
+
   map.fitBounds(communityGeo.getBounds().pad(0.05))
+  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
+  
   communityGeo.addTo(map);
 
-  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
+  // TODO figure out
+  //var markers = new L.MarkerClusterGroup();
+  //markers.addLayer(communityGeo);
+  //map.addLayer(markers);
 });
