@@ -18,11 +18,15 @@ xhr({
   var communityGeoJson = JSON.parse(body);
 
   var map = new L.Map('map', {zoom: 2, center: new L.latLng([0,0]) });
-  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
 
-  L.geoJson(communityGeoJson, {
+  var communityGeo = L.geoJson(communityGeoJson, {
     onEachFeature: function (feature, layer) {
       layer.bindPopup(feature.properties.githubUsername);
     },
-  }).addTo(map);
+  });
+  
+  map.fitBounds(communityGeo.getBounds().pad(0.05))
+  communityGeo.addTo(map);
+
+  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
 });
