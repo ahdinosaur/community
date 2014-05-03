@@ -8,7 +8,8 @@ L.Icon.Default.imagePath = "node_modules/leaflet/dist/images";
 var xhr = require('xhr');
 
 xhr({
-  url: "http://jsonp.jit.su?url=https://raw.githubusercontent.com/bevry/meta/master/community.geojson",
+  //url: "http://jsonp.jit.su?url=https://raw.githubusercontent.com/bevry/meta/master/community.geojson",
+  url: "community.geojson",
 }, function (err, resp, body) {
   if (err) { throw err; }
 
