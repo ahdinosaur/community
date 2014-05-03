@@ -6,6 +6,7 @@ git checkout -b gh-pages
 
 # build
 touch .nojekyll && \
+  git rm .gitignore && \
   git add . -f && \
   git reset -- node_modules && \
   git commit -m \"deploy\" && \
