@@ -8,8 +8,6 @@ git checkout -b gh-pages
 touch .nojekyll && \
   git rm .gitignore && \
   git add . -f && \
-  git add node_modules -f && \
-  git reset -- node_modules && \
   git commit -m \"deploy\" && \
   git push origin gh-pages --force
 
