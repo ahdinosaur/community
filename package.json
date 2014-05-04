@@ -24,8 +24,6 @@
     "browserify": "^3.41.0",
     "cssify": "^0.5.0",
     "uglifyify": "^2.1.1",
-    "leaflet": "git://github.com/ahdinosaur/Leaflet.git#build",
-    "leaflet-markercluster": "^0.2.0",
     "xhr": "^1.5.0",
     "geojson-mapify": "^0.1.0"
   },
