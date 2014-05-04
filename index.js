@@ -1,7 +1,6 @@
 require('./index.css');
 
-L = require('leaflet');
-require('leaflet-markercluster');
+var mapify = require('geojson-mapify');
 
 L.Icon.Default.imagePath = "node_modules/leaflet/dist/images";
 
@@ -17,21 +16,16 @@ xhr({
 
   var communityGeoJson = JSON.parse(body);
 
-  var map = new L.Map('map', {zoom: 2, center: new L.latLng([0,0]) });
-
-  var communityGeo = L.geoJson(communityGeoJson, {
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.githubUsername);
+  mapify({
+    geoJson: communityGeoJson,
+    geoJsonOptions: {
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.githubUsername);
+      },
     },
-  });
-
-  map.fitBounds(communityGeo.getBounds().pad(0.05))
-  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
-  
-  communityGeo.addTo(map);
-
-  // TODO figure out
-  //var markers = new L.MarkerClusterGroup();
-  //markers.addLayer(communityGeo);
-  //map.addLayer(markers);
+    map: "map",
+    mapOptions: {
+      zoom: 2, center: new L.latLng([0,0])
+    },
+  })
 });
